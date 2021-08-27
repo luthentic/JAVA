@@ -339,7 +339,23 @@ interface LEE{
 	string lee();
 }
 ```
-
+## If Instance only partial, add Abstract before class
+```java
+interface Fightable{
+	void move(int x,int y);
+	void attak();
+}
+abstract class Fighter implement Fightable{
+	public void move(int x,int y){}
+}
+```
+## Deafult method (JDK 1.8>)
+```java
+interface LEE{
+	default void lee{}
+}
+```
+## Inner Class, Unchanged Values are treated like final (JDK 1.8>)
 
 
 
