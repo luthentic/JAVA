@@ -403,10 +403,57 @@ class Ex9_2 {
 }
 ```
 * * *
-## hashCode() == return INT address of Obejct 
-## string class is immutable
+## Object Class
+
+### public boolean equals(Object obj){}
+
+### hashCode() == return INT address of Obejct    native code by C, JNI,  If override equals(), hashCode() override too
+* * *
+### String class is immutable, includes char[]
+### String Class equals() is overrided 
+### String str = String.valueOf(200); 
+* * *
+
+## StringBuffer
+
+### StringBuffer is mutalbe
+
+```java
+StringBuffer() = StringBuffer sb = new StringBuffer();	<== Default 16 size array
+```
+
+### StringBuffer equals() is not overrided  has to convert in String then compare
+
+### StringBuffer.append() 	<== converted in String
+
+### StringBuffer.capacity()   	<==  return StringBuffer size 
+
+### StringBuffer.lenth()	<==  return String size in StringBuffer 	
+
+### StringBuffer.delete(3,6)
+
+### StringBuffer.deleteCharAt(3);
+
+### StringBuffer.insert(5,any type);
+
+### StringBuffer.replace(int str, int end, String str);
+
+### StringBuffer.reverser(); 
+
+### StringBuffer.setCharAt(int index, char ch);
+
+### StringBuffer.subString(int start,int end <-option) <== return String
+
+* * *
+
+## StringBuilder is synchronized for multi-thread
+
+## rint() roundeven is more accurate than round()
+
+* * *
 
 
+ 
 
 
 
