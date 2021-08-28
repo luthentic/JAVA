@@ -12,6 +12,7 @@
 7. [PACKAGE](#PACKAGE)
 8. [ENCAPSULATION](#ENCAPSULATION)
 9. [POLYMORPHISM](#POLYMORPHISM)
+10.[INTERFACE](#INTERFACE)
 * * *
 
 
@@ -356,6 +357,54 @@ interface LEE{
 }
 ```
 ## Inner Class, Unchanged Values are treated like final (JDK 1.8>)
+* * *
+## ERROR
+## 
+1.Compile-Error
+2.Runtime-Error
+3.Lofical-Error 
+## Error (Can't handle)> Exception (try-catch or throws)
+## Try-Catch can't omit {}
+## Multi Catch Block (JDK 1.7>)
+```java
+catch(Exception A | Exception B e){
+	e.printeStackTrace();
+}
+```
+## Exception: Exception(Checked Exception: Try-Catch Necessary)and Runtime Exception(Unchecked Exception: UnNecessary)
+* * *
+## equals(Obeject obj) 
+```java
+class Person {
+	long id;
+
+	public boolean equals(Object obj) {				<== Polymorphism
+		if(obj instanceof Person)				
+			return id ==((Person)obj).id; 
+		else
+			return false;
+	}
+
+	Person(long id) {
+		this.id = id;
+	}
+}
+
+class Ex9_2 {
+	public static void main(String[] args) {
+		Person p1 = new Person(8011081111222L);
+		Person p2 = new Person(8011081111222L);
+
+		if(p1.equals(p2))
+			System.out.println("Equals.");
+		else
+			System.out.println("DIFFERENT.");
+	}
+}
+```
+* * *
+## hashCode() == return INT address of Obejct 
+## string class is immutable
 
 
 
