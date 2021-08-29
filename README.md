@@ -19,6 +19,7 @@
 ### class Card() <-  ERROR: Class doesn't have ()
 ### Object is a bundle of variables.
 ### rt.jar (~JAVA 8) module (JAVA9~) 
+### Sacnner.next() vs nextLine()   next() return till space (default) nextLine() return whole line
 * * *
 
 ## TYPE
@@ -452,8 +453,16 @@ StringBuffer() = StringBuffer sb = new StringBuffer();	<== Default 16 size array
 
 * * *
 
+## Collection Framwork
 
- 
+### List = Order: O, Overlap: O
+### Set  = Order: X, Overlap: X
+### Mao	 = Order: X, Overalp: Key:X, Value: O
+
+### Linked list -> Doubly linked list -> Doubly circular linked list
+
+### Statck = LIFO, CLASS  
+### QUE = FIFO, INTERFACE   boolean offer(Object o); Object poll(); Object peek();
 
 
 
