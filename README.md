@@ -12,11 +12,10 @@
 7. [PACKAGE](#PACKAGE)
 8. [ENCAPSULATION](#ENCAPSULATION)
 9. [POLYMORPHISM](#POLYMORPHISM)
-10. 
-11.[INTERFACE](#INTERFACE)
-12.[StringBuffer](#StringBuffer)
-13.[CollectionFramwork](#CollectionFramwork)
-14.[ARRAY](#ARRAY)
+10.[INTERFACE](#INTERFACE)
+11.[StringBuffer](#StringBuffer)
+12.[CollectionFramwork](#CollectionFramwork)
+13.[ARRAY](#ARRAY)
 
 * * *
 
