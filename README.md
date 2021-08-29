@@ -14,7 +14,7 @@
 9. [POLYMORPHISM](#POLYMORPHISM)
 10.[INTERFACE](#INTERFACE)
 11.[StringBuffer](#StringBuffer)
-12.[Collection Framwork](#Collection Framwork)
+12.[CollectionFramwork](#CollectionFramwork)
 13.[ARRAY](#ARRAY)
 * * *
 
