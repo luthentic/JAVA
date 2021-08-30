@@ -12,6 +12,11 @@ class Dropship extends Unit{
         System.out.println("Dropship MOVE X:"+x + "Y"+y);
     }
 }
+class Dropship2 extends Unit{
+    void move(int x,int y){
+        System.out.println("Dropship MOVE X:"+x + "Y"+y);
+    }
+}
 public class Abstract {
     public static void main(String[] args) {
         Unit group[]= {new Marine(),new Dropship()};
