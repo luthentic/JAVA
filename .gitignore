@@ -1,4 +1,9 @@
-.idea  
-lib
+### Example user template template
+### Example user template
+
+# IntelliJ project files
+.idea
+*.iml
 out
-Lee01.iml
+gen
+.lib
