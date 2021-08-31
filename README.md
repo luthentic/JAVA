@@ -461,13 +461,43 @@ StringBuffer() = StringBuffer sb = new StringBuffer();	<== Default 16 size array
 ## Collection Framwork
 
 ### List = Order: O, Overlap: O
+
+### Statck = LIFO, CLASS   == ArrayList !remove from last index 
+ 
+### QUE = FIFO, INTERFACE   == LinkedList
+
+```java
+import java.util.*;
+
+public class lee02 {
+  public static void main(String[] args) {
+    Stack st = new Stack();
+    Queue q = new LinkedList();
+
+    st.push("0");
+    st.push("1");
+    st.push("2");
+
+    q.offer("0");
+    q.offer("1");
+    q.offer("2");
+
+    while (! st.empty()){
+      System.out.println(st.pop());
+    }
+
+    while (! q.isEmpty()){
+      System.out.println(q.poll());
+    }
+  }
+}
+```
+* * *
+
 ### Set  = Order: X, Overlap: X
-### Mao	 = Order: X, Overalp: Key:X, Value: O
+### Map	 = Order: X, Overalp: Key:X, Value: O
 
-### Linked list -> Doubly linked list -> Doubly circular linked list
 
-### Statck = LIFO, CLASS  
-### QUE = FIFO, INTERFACE   boolean offer(Object o); Object poll(); Object peek();
 
 ## ARRAY
 
