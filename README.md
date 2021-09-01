@@ -597,6 +597,28 @@ class Person{
 * * *
 
 ### Map	 = Order: X, Overalp: Key:X, Value: O
+### HashMap 
+```java
+class lee02{
+  public static void main(String[] args) {
+      HashMap map = new HashMap();
+      map.put("LEE1",new Integer(60));
+      map.put("LEE2",new Integer(70));
+      map.put("LEE3",80);
+      map.put("LEE4",new Integer(90));
+
+      Set set = map.entrySet();
+      Iterator it = set.iterator();
+
+      while (it.hasNext()){
+        Map.Entry e = (Map.Entry)it.next();
+        System.out.println("Name:"+e.getKey()+" "+"Score" + e.getValue());
+      }
+
+
+  }
+  }
+```
 
 
 ### Buble Sort
