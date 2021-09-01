@@ -494,11 +494,6 @@ public class lee02 {
 ```
 * * *
 
-### Set  = Order: X, Overlap: X
-### Map	 = Order: X, Overalp: Key:X, Value: O
-
-
-
 ## ARRAY
 
 ```java
@@ -547,6 +542,80 @@ public class Array {
     }
 }
 ```
+### Iterator is interating standarzation for LIST SET MAP, Iterator is disposable
+### Map has to add ketSet() entrySet() or valuesSet().iterator()
+### BinarySearch needs Sort() first
+* * *
+### Comparator 
+
+### Set  = Order: X, Overlap: X
+### HashSet, LinkedHashSet,  TreeSet
+### needs to override equals(), and hashCode() 
+```java
+import java.util.*;
+
+class Scratch {
+    public static void main(String[] args) {
+        HashSet set = new HashSet();
+        
+        set.add("abc");
+        set.add("abc");
+        set.add(new Person("Lee",10));
+        set.add(new Person("Lee",10));
+        System.out.println(set);
+    }
+}
+
+class Person{
+    String name;
+    int age;
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name,age);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (!(obj instanceof Person)) return false;
+            Person p = (Person)obj;
+
+        return this.name.equals(p.name) && this.age ==p.age;  
+
+    }
+
+    Person(String name, int age){
+        this.name = name;
+        this.age = age;
+    }
+    public String toString(){
+        return name +":"+ age;
+    }
+}
+```
+### TreeSet
+* * *
+
+### Map	 = Order: X, Overalp: Key:X, Value: O
+
+
+### Buble Sort
+```java
+  public static void bubleSort(int[] arr){
+        for(int i=0; i<arr.length-1; i++){
+            for(int j=0; j<arr.length-1-i;i++){
+                int tep =0;
+                
+                if (arr[j] > arr[j+1]){
+                    tep = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = tep;
+                }
+            }
+        }
+    }
+```
+
 
 
 
