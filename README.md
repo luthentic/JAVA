@@ -15,7 +15,7 @@
 - [INTERFACE](#INTERFACE)
 - [StringBuffer](#StringBuffer)
 - [CollectionFramwork](#CollectionFramwork)
-- [ARRAY](#ARRAY)
+- [Thread](#Thread)
 
 
 * * *
@@ -620,6 +620,90 @@ class lee02{
   }
 ```
 
+## Thread
+### Thread Class or Runnable Interface
+```java
+class Scratch {
+    public static void main(String[] args) {
+        Thread1 th1 = new Thread1();
+        Runnable r = new Thread2();
+        Thread th2 = new Thread(r);
+
+        th1.start();
+        th2.start();
+    }
+}
+
+class Thread1 extends Thread{
+    public void run(){
+        for (int i=0; i < 5; i++){
+            System.out.println(this.getName());
+        }
+    }
+}
+
+class Thread2 implements Runnable{
+    public void run(){
+        for (int i=0; i<5; i++){
+            System.out.println(Thread.currentThread().getName());
+        }
+    }
+}
+```
+
+```java
+class Scratch {
+    static long startTime = 0;
+    public static void main(String[] args) {
+        Thread1 th1 = new Thread1();
+        Runnable r = new Thread2();
+        Thread th2 = new Thread(r);
+    
+        th1.start();
+        th2.start();
+        startTime = System.currentTimeMillis();
+        
+        try{
+            th1.join();
+            th2.join();
+        } catch (InterruptedException e){}
+        System.out.println("Time Consume"+(System.currentTimeMillis() - startTime));
+    }
+}
+
+class Thread1 extends Thread{
+    public void run(){
+        for (int i=0; i < 300; i++){
+            System.out.print(new String("-"));
+        }
+    }
+}
+
+class Thread2 implements Runnable{
+    public void run(){
+        for (int i=0; i<300; i++){
+            System.out.print(new String("|"));
+        }
+    }
+}
+```
+## Lamda Function
+
+```java
+class Scratch {
+    public static void main(String[] args) {
+       Myfunction f = (int a, int b) -> a > b ? a: b;
+       
+       int value = f.max(3,5);
+        System.out.println(value);
+    }
+}
+
+@FunctionalInterface				<== funcation interface connect to instance
+interface Myfunction {
+    int max(int a,int b);
+}
+```
 
 ### Buble Sort
 ```java
