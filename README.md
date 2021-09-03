@@ -704,6 +704,116 @@ interface Myfunction {
     int max(int a,int b);
 }
 ```
+## Stream
+
+### Intermediate Operations:
+
+map: The map method is used to returns a stream consisting of the results of applying the given function to the elements of this stream.
+
+	List number = Arrays.asList(2,3,4,5);
+
+	List square = number.stream().map(x->x*x).collect(Collectors.toList());
+
+filter: The filter method is used to select elements as per the Predicate passed as argument.
+
+	List names = Arrays.asList("Reflection","Collection","Stream");
+
+	List result = names.stream().filter(s->s.startsWith("S")).collect(Collectors.toList());
+
+sorted: The sorted method is used to sort the stream.
+
+	List names = Arrays.asList("Reflection","Collection","Stream");
+
+	List result = names.stream().sorted().collect(Collectors.toList());
+
+### Terminal Operations:
+
+collect: The collect method is used to return the result of the intermediate operations performed on the stream.
+
+	List number = Arrays.asList(2,3,4,5,3);
+
+	Set square = number.stream().map(x->x*x).collect(Collectors.toSet());
+
+forEach: The forEach method is used to iterate through every element of the stream.
+
+	List number = Arrays.asList(2,3,4,5);
+
+	number.stream().map(x->x*x).forEach(y->System.out.println(y));
+
+reduce: The reduce method is used to reduce the elements of a stream to a single value.
+
+	The reduce method takes a BinaryOperator as a parameter.
+
+	List number = Arrays.asList(2,3,4,5);
+	int even = number.stream().filter(x->x%2==0).reduce(0,(ans,i)-> ans+i);
+
+resoruce: https://www.geeksforgeeks.org/stream-in-java/
+```java
+import java.util.Comparator;
+import java.util.stream.Stream;
+
+class lee02{
+  public static void main(String[] args) {
+    Stream<Student> studentStream = Stream.of(
+        new Student("LEE1",1,100),
+        new Student("LEE2",2,600),
+        new Student("LEE3",3,300),
+        new Student("LEE4",4,200)
+    );
+    studentStream.sorted(Comparator.comparing(Student::getBan)
+            .thenComparing(Comparator.naturalOrder()))
+            .forEach(System.out::println);
+  }
+}
+
+class Student implements Comparable<Student>{
+  String name;
+  int ban;
+  int totalScore;
+
+  Student(String name,int ban, int totalScore){
+    this.name = name;
+    this.ban  = ban;
+    this.totalScore = totalScore;
+  }
+  public String toString(){
+    return String.format("%s, %d, %d", name,ban,totalScore);
+  }
+  String getName(){ return name;}
+  int getBan(){ return ban;}
+  int getTotalScore(){return totalScore;}
+
+  @Override
+  public int compareTo(Student o) {
+    return o.totalScore - this.totalScore;
+  }
+}
+```
+
+```java
+import java.io.File;
+import java.util.Comparator;
+import java.util.stream.Stream;
+
+class lee02{
+  public static void main(String[] args) {
+    File[] fileArr = {new File("Ex1.java"),new File("Ex2.bak"),
+                      new File("Ex3.txt"),new File("Ex4.kotlin")};
+
+    Stream<File> fileStream = Stream.of(fileArr);
+    Stream<String> fileNameStream = fileStream.map(File::getName);
+    fileNameStream.forEach(System.out::println);
+
+    fileStream = Stream.of(fileArr);
+    fileStream.map(File::getName)
+            .filter(s -> s.indexOf('.')!=1)
+            .map(s -> s.substring(s.indexOf('.')+1))
+            .distinct()
+            .forEach(System.out::println);
+
+  }
+}
+```
 
 
 ### Buble Sort
