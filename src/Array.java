@@ -38,7 +38,8 @@ public class Array {
         char[] chArr = {'a','b','c','d'};
 
         System.out.println("Index of b="+ Arrays.binarySearch(chArr,'b')); // wrong
-        Arrays.sort(chArr);
+//        Arrays.sort(chArr);
+        System.out.println("lEE");
         System.out.println(Arrays.binarySearch(chArr,'b')); // After sort Right 
     }
 }
